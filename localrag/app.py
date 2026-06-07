@@ -785,9 +785,18 @@ def create_ui():
     return demo
 
 
-def main():
+def main(share: bool = False):
     """启动 Web UI — 启动前自动初始化所有组件"""
     config = get_config()
+
+    if share:
+        p = print
+        p()
+        p("🌐 公网分享模式", flush=True)
+        p("   Gradio 将生成一个临时公网链接（约 72 小时有效）", flush=True)
+        p("   把链接发给任何人，他们就能用你的 localrag", flush=True)
+        p("   注意：你的电脑必须保持开机 + 网络畅通", flush=True)
+        p()
 
     # ====== 先初始化，再启动 UI ======
     p = print  # shortcut with flush
@@ -847,6 +856,6 @@ def main():
 
     demo.launch(
         server_port=config.ui.server_port,
-        share=config.ui.share,
+        share=share or config.ui.share,
         inbrowser=config.ui.inbrowser,
     )

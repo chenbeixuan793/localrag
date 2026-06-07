@@ -1,6 +1,10 @@
 """localrag 启动器 — 解压即用
 
 PyInstaller 打包后 sys.executable 指向 exe，exe 旁边就是 models/ 目录。
+
+用法:
+    python run.py              # 仅本机访问
+    python run.py --share      # 生成公网链接，别人也能用
 """
 
 import sys
@@ -25,7 +29,12 @@ if sys.platform == "win32":
 # HF 镜像（首次下载时用，已有本地模型可跳过）
 os.environ.setdefault("HF_ENDPOINT", "https://hf-mirror.com")
 
+# 命令行参数
+share = "--share" in sys.argv
+if share:
+    print("🌐 公网分享模式已启用，启动后将生成公网链接")
+
 from localrag.app import main
 
 if __name__ == "__main__":
-    main()
+    main(share=share)
