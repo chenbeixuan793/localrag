@@ -12,16 +12,36 @@
 - 💾 **对话持久化** — JSON 自动保存，下拉加载历史
 - ⚙️ **参数可调** — 温度/Top-P/上下文窗口全可拖滑块
 
-## 快速开始（使用者）
+## 快速开始（使用者 — 解压即用）
 
-1. 下载 `localrag-chat-v1.0.zip` 并解压到**纯英文路径**
-2. 双击 `启动助手.bat`
-3. 等 20 秒左右，浏览器自动打开 `http://localhost:7860`
-4. 开始聊天
+1. 下载完整包（约 3.2GB）
+   - **百度网盘：** [链接待上传]
+   - 或从 [GitHub Releases](../../releases) 下载
+2. 解压到**纯英文路径**（路径不要有中文）
+3. 双击 `启动助手.bat`
+4. 等 20 秒左右，浏览器自动打开 `http://localhost:7860`
+5. 开始聊天
 
 **不需要装 Python、pip、Ollama、Docker 或任何东西。**
 
-## 快速开始（开发者）
+## 快速开始（开发者 — 从源码跑）
+
+```bash
+# 1. 克隆源码
+git clone https://github.com/chenbeixuan793/localrag.git
+cd localrag
+
+# 2. 准备 Python 环境（需 Python 3.10+）
+pip install -r requirements.txt
+
+# 3. 下载模型和推理引擎
+python -m localrag.download --all
+
+# 4. 启动
+python run.py
+```
+
+> 如果网络受限无法下载，参见下方"离线安装"说明。
 
 ```bash
 git clone https://github.com/chenbeixuan793/localrag.git
