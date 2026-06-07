@@ -1,0 +1,45 @@
+# 模型文件（太大，放不下）
+models/*.gguf
+models/*.bin
+models/llama-server*
+models/llama-*.dll
+models/ggml*.dll
+models/mtmd.dll
+models/libomp*.dll
+models/bge-small-zh-v1.5/
+
+# 便携 Python（太大）
+python/
+
+# 打包产物
+dist/
+build/
+*.egg-info/
+
+# 知识库数据（用户隐私）
+knowledge/chroma_db/
+knowledge/conversations/
+
+# Python 缓存
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 临时文件
+*.tmp
+*.log
+_ctest*.py
+_convert*.py

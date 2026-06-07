@@ -1,0 +1,8 @@
+gradio>=6.15.2
+chromadb>=1.5.9
+sentence-transformers>=5.5.1
+requests>=2.32.5
+python-docx>=1.2.0
+PyPDF2>=3.0.1
+numpy>=2.4.3
+httpx>=0.28.1
